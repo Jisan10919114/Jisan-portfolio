@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jisan | Cybersecurity Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Animation for Hero Section */
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fade-in 1s ease-out forwards;
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+
+        /* Blurred Overlay for Hero Section */
+        .hero-overlay {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 33.33%;
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            background: white;
+            color: black;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+        }
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+        }
+        .modal button {
+            margin-top: 10px;
+            padding: 8px 16px;
+            background: red;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full bg-gray-800 p-4 flex justify-between items-center z-50">
+        <h1 class="text-xl font-bold">Jisan</h1>
+        <ul class="flex gap-6">
+            <li><a href="home.html" class="hover:text-gray-400">Home</a></li>
+            <li><a href="about.html" class="hover:text-gray-400">About</a></li>
+            <li><a href="portfolio.html" class="hover:text-gray-400">Portfolio</a></li>
+            <li><a href="blog.html" class="hover:text-gray-400">Blog</a></li>
+            <li><a href="services.html" class="hover:text-gray-400">Services</a></li>
+            <li><a href="#" class="hover:text-gray-400" onclick="showModal()">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen">
+        <div class="absolute top-0 w-full h-2/3 bg-cover bg-center" style="background-image: url('joss.jpg');"></div>
+        <div class="hero-overlay">
+            <div class="animate-fade-in">
+                <h2 class="text-4xl md:text-5xl font-bold">Hi, I'm Jisan</h2>
+                <p class="text-lg md:text-xl mt-2">Cybersecurity Specialist | Ethical Hacker | Web Pentester</p>
+                <div class="mt-6 flex justify-center gap-4">
+                    <a href="portfolio.html" class="px-6 py-2 bg-blue-500 hover:bg-blue-600 rounded animate-fade-in delay-100">View Portfolio</a>
+                    <button onclick="showModal()" class="px-6 py-2 bg-green-500 hover:bg-green-600 rounded animate-fade-in delay-200">Contact Me</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="p-8 text-center">
+        <h2 class="text-3xl font-bold mb-4">About Me</h2>
+        <p class="max-w-3xl mx-auto">I am passionate about cybersecurity, ethical hacking, and penetration testing. I explore vulnerabilities and strengthen digital defenses.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="p-8 text-center bg-gray-800">
+        <h2 class="text-3xl font-bold mb-4">My Expertise</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
+            <div class="p-6 bg-gray-700 rounded-lg">
+                <h3 class="text-xl font-semibold">Penetration Testing</h3>
+                <p>Identifying and mitigating vulnerabilities in web applications and networks.</p>
+            </div>
+            <div class="p-6 bg-gray-700 rounded-lg">
+                <h3 class="text-xl font-semibold">Security Audits</h3>
+                <p>Comprehensive security analysis and risk assessments for organizations.</p>
+            </div>
+            <div class="p-6 bg-gray-700 rounded-lg">
+                <h3 class="text-xl font-semibold">Bug Bounty</h3>
+                <p>Finding and reporting security flaws to help companies secure their systems.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certifications Section -->
+    <section id="certifications" class="p-8 text-center">
+        <h2 class="text-3xl font-bold mb-4">Certifications & Achievements</h2>
+        <p>Certified in cybersecurity fundamentals and ethical hacking.</p>
+        <p class="mt-2">[Insert Certification Logos or Details]</p>
+    </section>
+
+    <!-- Contact Modal -->
+    <div class="modal-overlay" id="modal-overlay"></div>
+    <div class="modal" id="contact-modal">
+        <h2 class="text-2xl font-bold">Contact Info</h2>
+        <p>Email: jisan@example.com</p>
+        <p>Phone: +123 456 7890</p>
+        <p>LinkedIn: linkedin.com/in/jisan</p>
+        <button onclick="closeModal()">Close</button>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center bg-gray-800 p-4 mt-6">
+        &copy; 2024 Jisan. All rights reserved.
+    </footer>
+
+    <script>
+        function showModal() {
+            document.getElementById("contact-modal").style.display = "block";
+            document.getElementById("modal-overlay").style.display = "block";
+        }
+        function closeModal() {
+            document.getElementById("contact-modal").style.display = "none";
+            document.getElementById("modal-overlay").style.display = "none";
+        }
+    </script>
+</body>
+</html>

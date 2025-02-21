@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me | Jisan | Cybersecurity Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Animation for fade-in effect */
+        @keyframes fade-in {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fade-in 1s ease-out forwards;
+        }
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+
+        /* Background Image Blur Effect */
+        .background-image {
+            filter: blur(10px);
+        }
+
+        /* Blurred Overlay */
+        .hero-overlay {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(5px);
+        }
+
+        /* Profile Picture Border */
+        .profile-pic {
+            border: 5px solid #fff;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color: #1a1a1a;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- About Page Navbar -->
+<nav class="fixed top-0 w-full bg-gray-800 p-4 flex justify-between items-center z-50">
+    <h1 class="text-xl font-bold">Jisan</h1>
+    <ul class="flex gap-6">
+        <li><a href="home.html" class="hover:text-gray-400">Home</a></li> <!-- Link back to Home Page -->
+        <li><a href="about.html" class="hover:text-gray-400">About</a></li>
+        <li><a href="portfolio.html" class="hover:text-gray-400">Portfolio</a></li>
+        <li><a href="blog.html" class="hover:text-gray-400">Blog</a></li>
+        <li><a href="services.html" class="hover:text-gray-400">Services</a></li>
+        <li><a href="contact.html" class="hover:text-gray-400">Contact</a></li>
+    </ul>
+</nav>
+<!-- About Page Navbar -->
+<nav class="fixed top-0 w-full bg-gray-800 p-4 flex justify-between items-center z-50">
+    <h1 class="text-xl font-bold">Jisan</h1>
+    <ul class="flex gap-6">
+        <li><a href="home.html" class="hover:text-gray-400">Home</a></li> <!-- Link back to Home Page -->
+        <li><a href="about.html" class="hover:text-gray-400">About</a></li>
+        <li><a href="portfolio.html" class="hover:text-gray-400">Portfolio</a></li>
+        <li><a href="blog.html" class="hover:text-gray-400">Blog</a></li>
+        <li><a href="services.html" class="hover:text-gray-400">Services</a></li>
+        <li><a href="contact.html" class="hover:text-gray-400">Contact</a></li>
+    </ul>
+</nav>
+<!-- Navbar -->
+<nav class="fixed top-0 w-full bg-gray-800 p-4 flex justify-between items-center z-50">
+    <h1 class="text-xl font-bold text-white">Jisan</h1>
+    <ul class="flex gap-6">
+        <li><a href="index.html" class="hover:text-gray-400">Home</a></li>
+        <li><a href="about.html" class="text-blue-500">About</a></li>
+        <li><a href="portfolio.html" class="hover:text-gray-400">Portfolio</a></li>
+        <li><a href="blog.html" class="hover:text-gray-400">Blog</a></li>
+        <li><a href="services.html" class="hover:text-gray-400">Services</a></li>
+        <li><a href="contact.html" class="hover:text-gray-400">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- About Section -->
+<section id="about" class="relative p-12 md:p-20 bg-gray-900">
+    <!-- Background Image -->
+    <div class="absolute top-0 left-0 w-full h-full background-image" style="background-image: url('your-about-image.jpg');"></div>
+
+    <!-- Overlay for Text Clarity -->
+    <div class="absolute top-0 left-0 w-full h-full hero-overlay"></div>
+
+    <!-- About Content -->
+    <div class="relative z-10 text-center">
+        <!-- Title -->
+        <h2 class="text-4xl md:text-5xl font-bold text-white mb-6 animate-fade-in">About Me</h2>
+
+        <!-- Introduction Text -->
+        <p class="max-w-3xl mx-auto text-lg md:text-xl text-white mb-12 animate-fade-in delay-100">
+            Hi, I'm Jisan, a passionate Computer Science and Engineering student at Port City International University. I am deeply invested in cybersecurity and ethical hacking, constantly exploring vulnerabilities and strengthening defenses. With a strong foundation in C, C++, and Python programming languages, I am also learning Java and expanding my skills with Kali Linux for penetration testing and security research.
+        </p>
+
+        <!-- Profile Picture -->
+        <div class="relative mx-auto mb-8 w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden profile-pic shadow-lg">
+            <img src="jisan.jpg" alt="Jisan" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-black opacity-10"></div>
+            <div class="absolute bottom-0 left-0 right-0 p-4 text-center text-white">
+                <p class="font-semibold text-lg">Jisan</p>
+                <p class="text-sm">Cybersecurity Enthusiast</p>
+            </div>
+        </div>
+
+        <!-- Skills Section -->
+        <h3 class="text-2xl md:text-3xl font-semibold text-white mb-8 animate-fade-in delay-200">Skills & Expertise</h3>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-6 max-w-4xl mx-auto">
+            <div class="p-4 bg-gray-800 rounded-lg shadow-md hover:bg-gray-700 transition duration-300">
+                <i class="fab fa-cuttlefish text-3xl mb-2"></i>
+                <p class="font-semibold text-lg">C Programming</p>
+            </div>
+            <div class="p-4 bg-gray-800 rounded-lg shadow-md hover:bg-gray-700 transition duration-300">
+                <i class="fab fa-cuttlefish text-3xl mb-2"></i>
+                <p class="font-semibold text-lg">C++ Programming</p>
+            </div>
+            <div class="p-4 bg-gray-800 rounded-lg shadow-md hover:bg-gray-700 transition duration-300">
+                <i class="fab fa-python text-3xl mb-2"></i>
+                <p class="font-semibold text-lg">Python Programming</p>
+            </div>
+            <div class="p-4 bg-gray-800 rounded-lg shadow-md hover:bg-gray-700 transition duration-300">
+                <i class="fab fa-java text-3xl mb-2"></i>
+                <p class="font-semibold text-lg">Java (Learning)</p>
+            </div>
+            <div class="p-4 bg-gray-800 rounded-lg shadow-md hover:bg-gray-700 transition duration-300">
+                <i class="fas fa-terminal text-3xl mb-2"></i>
+                <p class="font-semibold text-lg">Kali Linux</p>
+            </div>
+            <div class="p-4 bg-gray-800 rounded-lg shadow-md hover:bg-gray-700 transition duration-300">
+                <i class="fas fa-shield-alt text-3xl mb-2"></i>
+                <p class="font-semibold text-lg">Penetration Testing</p>
+            </div>
+        </div>
+
+        <!-- Education Section -->
+        <h3 class="text-2xl md:text-3xl font-semibold text-white mt-12 mb-4 animate-fade-in delay-300">Education & Certifications</h3>
+        <p class="text-lg md:text-xl text-white max-w-3xl mx-auto animate-fade-in delay-400">
+            I am currently pursuing my Bachelor's degree in Computer Science and Engineering (CSE) at Port City International University. I am also working towards obtaining certifications in ethical hacking, penetration testing, and digital security to expand my skillset and expertise.
+        </p>
+
+        <!-- Call-to-Action Button -->
+        <div class="mt-8 animate-fade-in delay-500">
+            <a href="portfolio.html" class="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-lg text-white font-semibold">View Portfolio</a>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-gray-800 py-6">
+    <div class="text-center text-white">
+        <p>&copy; 2024 Jisan. All rights reserved. | <a href="mailto:jisan@example.com" class="hover:text-blue-500">Contact Me</a></p>
+    </div>
+</footer>
+
+</body>
+</html>

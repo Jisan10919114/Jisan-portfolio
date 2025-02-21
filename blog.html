@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity Blog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <script>
+        function searchBlogs() {
+            let input = document.getElementById("search").value.toLowerCase();
+            let topics = document.querySelectorAll(".blog-title");
+            topics.forEach(topic => {
+                topic.parentElement.style.display = topic.innerText.toLowerCase().includes(input) ? "block" : "none";
+            });
+        }
+    </script>
+</head>
+<body class="bg-gray-900 text-white">
+    <!-- Navbar -->
+    <nav class="fixed top-0 w-full bg-gray-800 p-4 flex justify-between items-center z-50">
+        <h1 class="text-xl font-bold text-white flex items-center gap-2">
+            <i class="ph ph-shield-check"></i> Jisan's Blog
+        </h1>
+        <ul class="flex gap-6 text-white">
+            <li><a href="home.html" class="hover:text-gray-400 flex items-center gap-1"><i class="ph ph-house"></i> Home</a></li>
+            <li><a href="about.html" class="hover:text-gray-400 flex items-center gap-1"><i class="ph ph-user"></i> About</a></li>
+            <li><a href="portfolio.html" class="hover:text-gray-400 flex items-center gap-1"><i class="ph ph-briefcase"></i> Portfolio</a></li>
+            <li><a href="services.html" class="hover:text-gray-400 flex items-center gap-1"><i class="ph ph-gear"></i> Services</a></li>
+            <li><a href="#" class="hover:text-gray-400 flex items-center gap-1"><i class="ph ph-article"></i> Blog</a></li>
+            <li><a href="contact.html" class="hover:text-gray-400 flex items-center gap-1"><i class="ph ph-envelope"></i> Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Blog Introduction -->
+    <div class="mt-20 flex justify-center">
+        <div class="bg-white/10 backdrop-blur-md p-6 rounded-2xl shadow-lg w-3/4 text-center border border-white/20">
+            <h2 class="text-3xl font-bold">Jisan's Cybersecurity Blog</h2>
+            <p class="text-gray-300 mt-2">Explore insights on ethical hacking, penetration testing, and security best practices.</p>
+        </div>
+    </div>
+
+    <!-- Blog Section -->
+    <section class="max-w-4xl mx-auto pt-10 p-6">
+        <h2 class="text-3xl font-bold mb-4 text-center">Latest Blogs</h2>
+        <input type="text" id="search" onkeyup="searchBlogs()" placeholder="Search blog topics..." class="w-full p-2 border rounded mb-6 bg-white text-gray-700 shadow-md">
+        <ul class="list-disc pl-6 space-y-2">
+            <li><a href="#blog1" class="blog-title text-blue-300 hover:underline">Penetration Testing: A Beginner’s Guide to Ethical Hacking            </a></li>
+            <li><a href="#blog2" class="blog-title text-blue-300 hover:underline"> Bug Bounty Hunting: How Hackers Earn Legally            </a></li>
+            <li><a href="#blog3" class="blog-title text-blue-300 hover:underline">Common Web Application Security Flaws and How to Prevent Them            </a></li>
+            <li><a href="#blog4" class="blog-title text-blue-300 hover:underline">Red Team vs. Blue Team: Understanding Cybersecurity Roles</a></li>
+            <li><a href="#blog5" class="blog-title text-blue-300 hover:underline">Cybersecurity for Beginners: Essential Tools and Resources            </a></li>
+        </ul>
+        
+        <!-- Blog Posts -->
+        <article id="blog1" class="mt-10">
+            <h3 class="text-2xl font-bold">Penetration Testing: A Beginner’s Guide</h3>
+            <p class="text-sm text-gray-300">By Jisan | 6 min read</p>
+            <p class="mt-2 text-gray-200">Penetration testing, or ethical hacking, involves simulating cyberattacks on a network, system, or web application to find vulnerabilities before malicious hackers exploit them. As cyber threats continue to evolve, businesses need to identify weaknesses in their security measures, and that’s where penetration testers come in.
+
+                The Penetration Testing Process
+                
+                1. Reconnaissance: Gather information about the target (network, domain names, etc.).
+                
+                
+                2. Scanning: Identify open ports, services, and vulnerabilities.
+                
+                
+                3. Exploitation: Attempt to exploit the vulnerabilities discovered.
+                
+                
+                4. Post-exploitation: Analyze the potential impact of successful attacks.
+                
+                
+                5. Reporting: Provide a detailed report on the findings and recommendations for fixing vulnerabilities.
+                
+                
+                
+                Popular Penetration Testing Tools
+                
+                Metasploit: A framework used to find, exploit, and validate vulnerabilities.
+                
+                Nmap: A tool for network discovery and security auditing.
+                
+                Burp Suite: A platform for web application security testing.
+                
+                
+                Penetration testing is an essential part of a proactive cybersecurity strategy. If you’re interested in ethical hacking, start by practicing on platforms like TryHackMe and Hack The Box.
+                </p>
+        </article>
+
+        <article id="blog2" class="mt-10">
+            <h3 class="text-2xl font-bold">Bug Bounty Hunting: How Hackers Earn Legally</h3>
+            <p class="text-sm text-gray-300">By Jisan | 7 min read</p>
+            <p class="mt-2 text-gray-200">Bug bounty hunting allows ethical hackers to find and report vulnerabilities in software and earn rewards. Platforms like HackerOne, Bugcrowd, and GitHub Security Lab connect companies with security researchers to improve product security.
+
+                How Bug Bounty Hunting Works
+                
+                Companies set up a bug bounty program, offering rewards for discovering vulnerabilities. Once a researcher finds a bug, they submit a detailed report, and if verified, they receive a reward.
+                
+                Popular Bug Bounty Platforms
+                
+                HackerOne: One of the largest bug bounty platforms.
+                
+                Bugcrowd: A platform with both public and private programs.
+                
+                GitHub Security Lab: A community-driven platform for finding vulnerabilities in open-source code.
+                
+                
+                Tips for Beginners
+                
+                Start by familiarizing yourself with common vulnerabilities like SQL Injection and XSS.
+                
+                Focus on high-impact vulnerabilities to maximize your chances of earning rewards.
+                
+                Participate in Capture The Flag (CTF) challenges to practice your skills.
+                
+                
+                Bug bounty hunting can be a profitable side hustle for anyone passionate about ethical hacking.
+                
+                
+                </p>
+        </article>
+
+        <article id="blog3" class="mt-10">
+            <h3 class="text-2xl font-bold">Common Web Application Security Flaws</h3>
+            <p class="text-sm text-gray-300">By Jisan | 5 min read</p>
+            <p class="mt-2 text-gray-200">Web applications are a common target for cybercriminals. Understanding common security flaws is crucial for both developers and security professionals.
+
+                Common Vulnerabilities
+                
+                1. SQL Injection: Occurs when an attacker inserts malicious SQL code into an input field to access the database.
+                
+                
+                2. Cross-Site Scripting (XSS): Malicious scripts injected into web pages viewed by other users, allowing attackers to steal data.
+                
+                
+                3. Cross-Site Request Forgery (CSRF): Tricks a user into executing unintended actions on a website.
+                
+                
+                4. Insecure Direct Object References (IDOR): Attackers manipulate user inputs to access unauthorized data.
+                
+                
+                
+                How to Prevent These Vulnerabilities
+                
+                SQL Injection: Use parameterized queries and ORM frameworks.
+                
+                XSS: Validate and sanitize user inputs.
+                
+                CSRF: Use anti-CSRF tokens and check for referer headers.
+                
+                IDOR: Implement proper access control checks and validation.
+                
+                
+                Regular security testing, code reviews, and following security best practices are essential for preventing these flaws.
+                
+                </p>
+        </article>
+
+        <article id="blog4" class="mt-10">
+            <h3 class="text-2xl font-bold">Red Team vs. Blue Team: Understanding Cybersecurity Roles
+            </h3>
+            <p class="text-sm text-gray-300">By Jisan | 6 min read</p>
+        <p class="mt-2 text-gray-200">Cybersecurity professionals often fall into two main categories: Red Team and Blue Team. Both play crucial roles in protecting an organization’s assets, but their approaches differ.
+
+            Red Team: Offensive Security
+            
+            Red teams are responsible for simulating real-world cyberattacks to test an organization’s defenses. They use penetration testing techniques, social engineering, and other methods to identify vulnerabilities before malicious hackers can exploit them.
+            
+            Blue Team: Defensive Security
+            
+            Blue teams focus on defending against cyberattacks by monitoring networks, implementing security controls, and responding to incidents. They work to identify weaknesses in the organization’s security posture and ensure that systems are properly secured.
+            
+            Choosing Your Path
+            
+            If you enjoy problem-solving and thinking like an attacker, a Red Team role may be right for you.
+            
+            If you prefer a defensive strategy and managing security operations, consider a Blue Team role.
+            
+            
+            Both roles require a solid understanding of cybersecurity principles and continuous learning to stay ahead of emerging threats.</p>
+        </article>
+
+        <article id="blog5" class="mt-10">
+            <h3 class="text-2xl font-bold">Cybersecurity for Beginners: Essential Tools and Resources            </h3>
+            <p class="text-sm text-gray-300">By Jisan | 8 min read</p>
+            <p class="mt-2 text-gray-200">If you're starting in cybersecurity, it’s essential to familiarize yourself with the right tools and resources to build your skills. Here's a list of essential tools and platforms to get started:
+
+                Must-Know Security Tools
+                
+                Wireshark: A network protocol analyzer used to capture and inspect data packets.
+                
+                Nmap: A tool for discovering hosts and services on a network.
+                
+                Burp Suite: A popular tool for testing web application security.
+                
+                
+                Learning Platforms
+                
+                TryHackMe: Offers a variety of interactive, hands-on labs for beginners to learn penetration testing and cybersecurity.
+                
+                Hack The Box: A platform for hacking challenges and simulations to test your skills.
+                
+                PortSwigger Academy: Provides free web security training using real-world scenarios.
+                
+                
+                Setting Up a Home Lab
+                
+                Building a home lab is a great way to practice hands-on security skills. You can use virtual machines to simulate different environments and test security tools without any risk to your main system.
+                
+                </p>
+        </article>
+    </section>
+</body>
+</html>
